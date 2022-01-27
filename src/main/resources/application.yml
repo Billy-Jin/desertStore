@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    encoding:      charset: UTF-8
+      enabled: true      force: true
+spring:  datasource:    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/dessert?serverTimezone=UTC&characterEncoding=UTF-8
+    username: dessertAdmin
+    password: 1234
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: true
+    hibernate:
+      ddl-auto: create      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+
