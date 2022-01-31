@@ -1,0 +1,36 @@
+.main {
+  display: inline-block;
+  height: 1600px;
+  width: 90%;
+  background-color: khaki;
+}
+.main .main-list {
+  display: inline-block;
+  margin-top: 10px;
+  width: 90%;
+  height: 350px;
+  border: 1px solid black;
+  list-style: none;
+  padding: 30px;
+}
+.main .main-list .main-items {
+  float: left;
+  border: 1px solid black;
+}
+.main .main-list .main-items .main-item {
+  margin: 10px;
+}
+.main .main-list .main-items .main-item img {
+  width: 300px;
+  height: 250px;
+}
+.main .main-list .main-items .main-item strong {
+  display: block;
+}
+
+.main .product-list {
+  display: inline-block;
+  width: 90%;
+  height: 1200px;
+  border: 1px solid black;
+}

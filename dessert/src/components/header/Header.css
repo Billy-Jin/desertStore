@@ -1,0 +1,41 @@
+.header {
+  background-color: orange;
+  height: 80px;
+  text-align: center;
+  width: 90%;
+  display: inline-block;
+}
+.header .logo {
+  background-color: greenyellow;
+  width: 10%;
+  float: left;
+  height: 80px;
+}
+.header .menuList {
+  float: left;
+  width: 80%;
+  background-color: tomato;
+  height: 80px;
+  /* line-height: 80px; */
+}
+
+.header ul {
+  list-style: none;
+}
+.header ul li {
+  float: left;
+  margin: -20px 30px;
+  font-size: 20px;
+  background: grey;
+  padding: 20px;
+}
+.header .login {
+  float: left;
+  height: 80px;
+  background-color: hotpink;
+  width: 10%;
+  text-align: center;
+  line-height: 80px;
+}
+.header .login span {
+}
