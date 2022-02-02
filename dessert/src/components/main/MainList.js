@@ -4,9 +4,11 @@ import MainItem from "./MainItem";
 const MainList = ({ testImgs }) => {
   return (
     <ul className='main-list'>
-      {testImgs.map((item) => (
-        <MainItem testImg={item} key={item.id} />
-      ))}
+      <div className='main-behind'>
+        {testImgs.map((item) => (
+          <MainItem testImg={item} key={item.id} />
+        ))}
+      </div>
     </ul>
   );
 };
