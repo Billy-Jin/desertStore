@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MenuList from "./MenuList";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const dummy_list = [
   {
@@ -32,20 +33,22 @@ const dummy_list = [
 const Header = () => {
   const [menuList, setMenuList] = useState(dummy_list);
   return (
-    <div className='header'>
-      <div className='logo'>
+    <div className="header">
+      <div className="logo">
         <span>로고</span>
         <span>브랜드명</span>
       </div>
-      <div className='menuList'>
+      <div className="menuList">
         <ul>
           {menuList.map((item, index) => (
             <MenuList key={index} menu={item} />
           ))}
         </ul>
       </div>
-      <div className='login'>
-        <span>로그인</span>
+      <div className="login">
+        <Link to="/loginForm" className="linkForm">
+          <span>로그인</span>
+        </Link>
       </div>
     </div>
   );
