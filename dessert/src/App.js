@@ -8,11 +8,11 @@ import JoinForm from "./components/login/JoinForm";
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Header />
-      <Route exact path="/loginForm" component={LoginForm} />
-      <Route exact path="/joinForm" component={JoinForm} />
-      <Route exact path="/" component={Main} />
+      <Route exact path='/loginForm' component={LoginForm} />
+      <Route exact path='/joinForm' component={JoinForm} />
+      <Route exact path='/' component={Main} />
       <Footer />
     </div>
   );
