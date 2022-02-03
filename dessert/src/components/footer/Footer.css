@@ -1,0 +1,62 @@
+.footer {
+  width: 100%;
+  height: 400px;
+  background-color: orange;
+  align-content: center;
+  width: 90%;
+  display: inline-block;
+}
+
+.footer .ft-div {
+  width: 100%;
+  text-align: center;
+}
+/* .footer .ft-div nav {
+} */
+
+.footer .ft-div nav ul {
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+  padding: 0px;
+}
+.footer .ft-div nav ul li {
+  float: left;
+}
+.footer .ft-div nav ul li .termsOf-text {
+  margin: 0px 10px;
+  display: inline-block;
+}
+
+.footer .ft-div2 {
+  display: inline-block;
+  width: 100%;
+  height: 250px;
+  background-color: aqua;
+  text-align: left;
+}
+
+.footer .text-box {
+  float: left;
+  margin: 10px 30px;
+  width: 20%;
+}
+.footer .text-box .logo {
+  text-align: right;
+}
+.footer .text-box ul {
+  list-style: none;
+  padding: 0px;
+}
+.footer .text-box ul li label {
+  margin-right: 5px;
+}
+.footer .text-box ul li .service-time {
+  font-size: 10px;
+}
+.footer .text-box .mt-fix1 {
+  font-size: 8px;
+}
+.footer .text-box .copyright {
+  font-size: 10px;
+}
