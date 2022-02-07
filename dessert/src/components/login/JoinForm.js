@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
@@ -9,6 +10,9 @@ const StyledContainer = styled.div`
 `;
 
 const JoinForm = () => {
+  //화면 이동
+  const history = useHistory();
+
   //회원가입을 위한 useState
   const [userData, setUserData] = useState({
     username: "",
@@ -22,19 +26,35 @@ const JoinForm = () => {
       ...userData,
       [e.target.name]: e.target.value,
     });
-    console.log(userData);
   };
 
   const join = (e) => {
     e.preventDefault();
     let data = {
       username: userData.username,
-      passowrd: userData.passowrd,
-      userid: userData.userid,
+      password: userData.password,
+      id: userData.userid,
       email: userData.email,
     };
-
-    fetch().then().then().catch();
+    console.log(data);
+    fetch("http://localhost:8080/api/userJoin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.statusCode == 200) {
+          alert("회원가입이 정상적으로 완료되었습니다");
+          history.push("/");
+        } else {
+          alert("회원가입에 실패하었습니다");
+          console.log(data.error);
+        }
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
