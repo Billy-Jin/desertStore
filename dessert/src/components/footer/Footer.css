@@ -26,6 +26,7 @@
 .footer .ft-div nav ul li .termsOf-text {
   margin: 0px 10px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .footer .ft-div2 {

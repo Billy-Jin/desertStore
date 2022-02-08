@@ -32,6 +32,13 @@
   background: grey;
   padding: 10px;
 }
+.header ul li:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.login:hover text {
+  cursor: pointer;
+}
 .header .login {
   float: left;
   height: 80px;

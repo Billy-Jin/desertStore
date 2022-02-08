@@ -80,3 +80,9 @@
 .main .product-item-div strong {
   display: block;
 }
+
+.main-item:hover,
+.product-item-div:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

@@ -4,14 +4,14 @@ server:
     encoding:      charset: UTF-8
       enabled: true      force: true
 spring:  datasource:    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://192.168.45.23:3306/dessert?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mariadb://192.168.219.103:3306/dessertstore?serverTimezone=UTC&characterEncoding=UTF-8
     username: dessertDB
     password: 1234
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: true
     hibernate:
-      ddl-auto: update      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: create      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
 
 
