@@ -44,7 +44,7 @@ const LoginForm = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.statusCode == 200) {
+        if (data.statusCode === 200) {
           alert("로그인에 성공하셨습니다");
           history.push("/");
         } else {
@@ -82,7 +82,7 @@ const LoginForm = () => {
           </Form.Group>
           <Button variant="primary" type="submit">
             로그인
-          </Button>{" "}
+          </Button>
           <Link to="/joinForm">
             <Button variant="info" type="submit" style={{ color: "white" }}>
               회원가입

@@ -46,7 +46,7 @@ const JoinForm = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.statusCode == 200) {
+        if (data.statusCode === 200) {
           alert("회원가입이 정상적으로 완료되었습니다");
           history.push("/");
         } else {

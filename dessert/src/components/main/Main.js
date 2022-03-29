@@ -2,84 +2,15 @@ import React, { useEffect, useState } from "react";
 import MainList from "./MainList/MainList";
 import ProductList from "./ProductList/ProductList";
 import "./Main.css";
+import MacaronList from "./ProductList/MacaronList";
+import CookieList from "./ProductList/CookieList";
+import SaladList from "./ProductList/SaladList";
+import DrinkList from "./ProductList/DrinkList";
+import CakeList from "./ProductList/CakeList";
+import YogurtList from "./ProductList/YogurtList";
+import { Route } from "react-router-dom";
 
-const imgList = [
-  {
-    id: 1,
-    title: "효정1",
-    image: "./images/hyojung/hyojung1.jpg",
-    desc: "효정1 이미지의 세부설명입니다.",
-  },
-  {
-    id: 2,
-    title: "효정2",
-    image: "./images/hyojung/hyojung2.jpg",
-    desc: "효정2 이미지의 세부설명입니다.",
-  },
-  {
-    id: 3,
-    title: "효정3",
-    image: "./images/hyojung/hyojung3.jpg",
-    desc: "효정3 이미지의 세부설명입니다.",
-  },
-  {
-    id: 4,
-    title: "효정4",
-    image: "./images/hyojung/hyojung4.jpg",
-    desc: "효정4 이미지의 세부설명입니다.",
-  },
-  {
-    id: 5,
-    title: "효정5",
-    image: "./images/hyojung/hyojung5.jpg",
-    desc: "효정5 이미지의 세부설명입니다.",
-  },
-  {
-    id: 6,
-    title: "효정6",
-    image: "./images/hyojung/hyojung6.jpg",
-    desc: "효정6 이미지의 세부설명입니다.",
-  },
-  {
-    id: 7,
-    title: "효정1",
-    image: "./images/hyojung/hyojung1.jpg",
-    desc: "효정1 이미지의 세부설명입니다.",
-  },
-  {
-    id: 8,
-    title: "효정2",
-    image: "./images/hyojung/hyojung2.jpg",
-    desc: "효정2 이미지의 세부설명입니다.",
-  },
-  {
-    id: 9,
-    title: "효정3",
-    image: "./images/hyojung/hyojung3.jpg",
-    desc: "효정3 이미지의 세부설명입니다.",
-  },
-  {
-    id: 10,
-    title: "효정4",
-    image: "./images/hyojung/hyojung4.jpg",
-    desc: "효정4 이미지의 세부설명입니다.",
-  },
-  {
-    id: 11,
-    title: "효정5",
-    image: "./images/hyojung/hyojung5.jpg",
-    desc: "효정5 이미지의 세부설명입니다.",
-  },
-  {
-    id: 12,
-    title: "효정6",
-    image: "./images/hyojung/hyojung6.jpg",
-    desc: "효정6 이미지의 세부설명입니다.",
-  },
-];
-
-const Main = () => {
-  const [testImgs, setTestImgs] = useState(imgList);
+const Main = ({ testImgs, mainImgs, categoryImgs }) => {
   const [trans, setTrans] = useState(0);
   const [transMove, setTransMove] = useState(true);
 
@@ -103,15 +34,47 @@ const Main = () => {
   const runTrans = () => {
     setTransMove(true);
   };
+
   return (
-    <div className='main'>
+    <div className="main">
+      <h1>추천상품</h1>
       <MainList
         testImgs={testImgs}
         trans={trans}
         stopTrans={stopTrans}
         runTrans={runTrans}
       />
-      <ProductList testImgs={testImgs} />
+      <Route path="/" render={() => <ProductList mainImgs={mainImgs} />} />
+      <Route
+        exact
+        path="/main/macaron"
+        render={() => <MacaronList mainImgs={categoryImgs} />}
+      />
+      <Route
+        exact
+        path="/main/yogurt"
+        render={() => <YogurtList mainImgs={categoryImgs} />}
+      />
+      <Route
+        exact
+        path="/main/salad"
+        render={() => <SaladList mainImgs={categoryImgs} />}
+      />
+      <Route
+        exact
+        path="/main/cake"
+        render={() => <CakeList mainImgs={categoryImgs} />}
+      />
+      <Route
+        exact
+        path="/main/cookie"
+        render={() => <CookieList mainImgs={categoryImgs} />}
+      />
+      <Route
+        exact
+        path="/main/drink"
+        render={() => <DrinkList mainImgs={categoryImgs} />}
+      />
     </div>
   );
 };

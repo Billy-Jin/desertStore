@@ -1,10 +1,10 @@
 import React from "react";
 
-const ProductItem = ({ testImg }) => {
-  const { id, title, image, desc } = testImg;
+const ProductItem = ({ mainImg }) => {
+  const { id, title, image, desc } = mainImg;
   return (
-    <li className='product-item-li'>
-      <div className='product-item-div'>
+    <li className="product-item-li">
+      <div className="product-item-div">
         <img src={image} alt={title} />
         <strong>{title}</strong>
         <span>{desc}</span>
