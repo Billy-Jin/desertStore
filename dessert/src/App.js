@@ -11,7 +11,7 @@ const imgList = [
   {
     id: 1,
     title: "수제쿠키",
-    category: "dessert",
+    category: "cookie",
     image: "./images/dessert/cookie.jpg",
     desc: "장인이 직접 만든 수제 쿠키",
   },
@@ -46,14 +46,14 @@ const imgList = [
   {
     id: 6,
     title: "포춘쿠키",
-    category: "dessert",
+    category: "cookie",
     image: "./images/dessert/fortune_cookie.jpg",
     desc: "포츈 쿠키로 오늘의 행운을 확인하세요!",
   },
   {
     id: 7,
     title: "수제쿠키",
-    category: "dessert",
+    category: "cookie",
     image: "./images/dessert/cookie.jpg",
     desc: "장인이 직접 만든 수제 쿠키",
   },
@@ -88,7 +88,7 @@ const imgList = [
   {
     id: 12,
     title: "포춘쿠키",
-    category: "dessert",
+    category: "cookie",
     image: "./images/dessert/fortune_cookie.jpg",
     desc: "포츈 쿠키로 오늘의 행운을 확인하세요!",
   },
@@ -98,7 +98,7 @@ const mainList = [
   {
     id: 1,
     title: "수제쿠키",
-    category: "dessert",
+    category: "cookie",
     image: "./images/dessert/cookie.jpg",
     desc: "장인이 직접 만든 수제 쿠키",
     price: "",
@@ -106,7 +106,7 @@ const mainList = [
   {
     id: 2,
     title: "딸기케이크",
-    category: "dessert",
+    category: "cake",
     image: "./images/dessert/strawberry_cake3.jpg",
     desc: "신선한 딸기가 들어간 달콤한 케이크",
     price: "",
@@ -114,7 +114,7 @@ const mainList = [
   {
     id: 3,
     title: "티라미수",
-    category: "dessert",
+    category: "cake",
     image: "./images/dessert/tiramisu1.jpg",
     desc: "달콤한 티라미수 케이크",
     price: "",
@@ -138,7 +138,7 @@ const mainList = [
   {
     id: 6,
     title: "포춘쿠키",
-    category: "dessert",
+    category: "cookie",
     image: "./images/dessert/fortune_cookie.jpg",
     desc: "포츈 쿠키로 오늘의 행운을 확인하세요!",
     price: "",
@@ -242,7 +242,7 @@ const mainList = [
   {
     id: 19,
     title: "요거트볼",
-    category: "dessert",
+    category: "yogurt",
     image: "./images/dessert/yogurt.jpg",
     desc: "그래놀라와 계절과일이 들어간 요거트볼",
     price: "",
@@ -258,7 +258,7 @@ const mainList = [
   {
     id: 21,
     title: "닭가슴살 샐러드",
-    category: "dessert",
+    category: "salad",
     image: "./images/salad/chicken-salad.jpg",
     desc: "닭가슴살 샐러드",
     price: "",
@@ -266,7 +266,7 @@ const mainList = [
   {
     id: 22,
     title: "생연어 샐러드",
-    category: "dessert",
+    category: "salad",
     image: "./images/salad/smoked-salmon-salad.jpg",
     desc: "생연어 샐러드",
     price: "",
@@ -274,7 +274,7 @@ const mainList = [
   {
     id: 23,
     title: "구운연어 샐러드",
-    category: "dessert",
+    category: "salad",
     image: "./images/salad/baked-salmon-salad.jpg",
     desc: "구운연어 샐러드",
     price: "",
@@ -282,7 +282,7 @@ const mainList = [
   {
     id: 24,
     title: "새우 샐러드",
-    category: "dessert",
+    category: "salad",
     image: "./images/salad/shirimp-salad.jpg",
     desc: "새우 샐러드",
     price: "",
@@ -290,7 +290,7 @@ const mainList = [
   {
     id: 25,
     title: "치즈 샐러드",
-    category: "dessert",
+    category: "salad",
     image: "./images/salad/cheese-salad.jpg",
     desc: "큐브치즈 샐러드",
     price: "",
@@ -299,25 +299,21 @@ const mainList = [
 function App() {
   const [testImgs, setTestImgs] = useState(imgList);
   const [mainImgs, setMainImgs] = useState(mainList);
-  const [categoryImgs, setCategoryImgs] = useState(mainList);
   const categoryData = (category) => {
-    setCategoryImgs(mainList.filter((item) => item.category === category));
+    setMainImgs(mainList.filter((item) => item.category === category));
+  };
+  const allData = () => {
+    setMainImgs(mainList);
   };
   return (
-    <div className="App">
-      <Header categoryData={categoryData} />
-      <Route exact path="/loginForm" component={LoginForm} />
-      <Route exact path="/joinForm" component={JoinForm} />
+    <div className='App'>
+      <Header categoryData={categoryData} allData={allData} />
+      <Route exact path='/loginForm' component={LoginForm} />
+      <Route exact path='/joinForm' component={JoinForm} />
       <Route
         exact
-        path="/"
-        render={() => (
-          <Main
-            testImgs={testImgs}
-            mainImgs={mainImgs}
-            categoryImgs={categoryImgs}
-          />
-        )}
+        path='/'
+        render={() => <Main testImgs={testImgs} mainImgs={mainImgs} />}
       />
       <Footer />
     </div>

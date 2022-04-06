@@ -3,18 +3,8 @@ import { Link } from "react-router-dom";
 
 const MenuList = ({ menu, categoryData }) => {
   const { subject, eng, detail } = menu;
-  const categorySetting = () => {
-    console.log(eng);
-    categoryData(eng);
-  };
 
-  return (
-    <li onClick={categorySetting}>
-      <Link to={"/main/" + eng} className="linkForm">
-        {subject}
-      </Link>
-    </li>
-  );
+  return <li onClick={() => categoryData(eng)}>{subject}</li>;
 };
 
 export default MenuList;

@@ -36,25 +36,25 @@ const dummy_list = [
   },
 ];
 
-const Header = ({ categoryData }) => {
+const Header = ({ categoryData, allData }) => {
   const [menuList, setMenuList] = useState(dummy_list);
   return (
-    <div className="header">
-      <div className="logo">
-        <Link to="/" className="linkForm">
+    <div className='header'>
+      <div className='logo' onClick={() => allData()}>
+        <Link to='/' className='linkForm'>
           <span>로고</span>
           <span>브랜드명</span>
         </Link>
       </div>
-      <div className="menuList">
+      <div className='menuList'>
         <ul>
           {menuList.map((item, index) => (
             <MenuList key={index} menu={item} categoryData={categoryData} />
           ))}
         </ul>
       </div>
-      <div className="login">
-        <Link to="/loginForm" className="linkForm">
+      <div className='login'>
+        <Link to='/loginForm' className='linkForm'>
           <span>로그인</span>
         </Link>
       </div>

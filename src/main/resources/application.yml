@@ -4,7 +4,7 @@ server:
     encoding:      charset: UTF-8
       enabled: true      force: true
 spring:  datasource:    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://192.168.219.103:3306/dessertstore?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mariadb://192.168.219.100:3306/dessertstore?serverTimezone=UTC&characterEncoding=UTF-8
     username: dessertDB
     password: 1234
   jpa:
